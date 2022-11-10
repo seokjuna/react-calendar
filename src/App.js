@@ -13,13 +13,15 @@ export default function App() {
   let result = Math.ceil(gap / (1000 * 60 * 60 * 24));
   return (
     <>
-      <Calendar
-        value={dateState}
-        onChange={changeDate}
-      />
-      <p>오늘 날짜는 {moment(today).format('yyyy-MM-DD')}입니다.</p> 
-      <p>선택하신 날짜는 {moment(dateState).format('yyyy-MM-DD')}입니다.</p>
-      <p>D-day까지 {result}일 남았습니다.</p>
+      <div style={{padding: "5rem"}}>
+        <Calendar
+          value={dateState}
+          onChange={changeDate}
+        />
+        <p>오늘 날짜는 {moment(today).format('yyyy-MM-DD')}입니다.</p> 
+        <p>선택하신 날짜는 {moment(dateState).format('yyyy-MM-DD')}입니다.</p>
+        <p>D-day까지 {result}일 남았습니다.</p>
+      </div>
     </>
   )
 }
