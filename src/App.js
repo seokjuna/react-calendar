@@ -1,25 +1,24 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from 'react';
+import Calendar from 'react-calendar';
+import 'react-calendar/dist/Calendar.css';
+import moment from 'moment';
 
-function App() {
+export default function App() {
+  const today = new Date();
+
+  const [dateState, setDateState] = useState(new Date());
+  const changeDate = e => {
+    setDateState(e)
+  }
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    <>
+      <Calendar
+        value={dateState}
+        onChange={changeDate}
+      />
+      <p>오늘 날짜는 {moment(today).format('yyyy-MM-DD')}입니다.</p> 
+      <p>선택하신 날짜는 {moment(dateState).format('yyyy-MM-DD')}입니다.</p>
+    </>
+  )
 }
 
-export default App;
