@@ -1,8 +1,8 @@
 # Calendar App
 
-React:
-- yarn: react-calendar, moment
-- function: useState
+React:<br>
+- yarn: react-calendar, moment<br>
+- function: useState<br>
 
 <br/>
 2022-11-10
